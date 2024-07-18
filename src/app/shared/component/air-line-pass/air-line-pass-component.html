@@ -1,0 +1,13 @@
+
+
+<h1 class=" display-4 mb-5 text-center">Airline Passengers</h1>
+<div class="row">
+    <div class="col-md-4  mb-4">
+        <app-total-checked-in [getAirline]="getArrFromApp"></app-total-checked-in>
+    </div>
+    <div class="col-md-5 offset-md-1">
+        <app-passenger-list [getObj]="obj" *ngFor="let obj of getArrFromApp" (sendData)="onsendData($event)"></app-passenger-list>
+    </div>
+</div> 
+
+

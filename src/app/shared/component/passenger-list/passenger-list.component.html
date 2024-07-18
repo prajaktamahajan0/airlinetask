@@ -1,0 +1,24 @@
+
+
+    <div class="card  mb-3">
+        <div class="card-header h5">
+          <span >{{getObj.fullname}}</span>
+          
+          <input type="text"  class="form-control "[value]="getObj.fullname" 
+           (input)="onInput($event)" *ngIf="!flag">
+        </div>
+
+        <div class="card-body">
+          <p class="card-title">Check in Date : {{(getObj.checkInDate | date) ? (getObj.checkInDate | date) : "Not Checked In"}}</p>
+
+          <p class="card-title">Children : {{getObj.children === null ? 0: getObj.children.length}}</p>
+
+            <div class="form-group text-right">
+                <button class="btn  mx-2" (click)="onEdit($event)" *ngIf="flag">Edit</button> 
+                <button class="btn  mx-2" (click)="onDone($event)" *ngIf="!flag">Update</button>
+                <button class="btn "(click)="onRemove($event)">Remove</button>
+            </div>
+    </div>
+
+
+
